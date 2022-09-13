@@ -4,8 +4,14 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("burasi index sayfasi")
+    return render(request, "todo/index.html", {"name":"Fuat SEVINC"} )
 
 
 def about(request):
-    return HttpResponse("burasi about sayfasi")
+    return render(request, "todo/about.html", {"surname":"ABOUT SAYFASI"} )
+
+def link(request):
+    return render(request, "todo/link.html", {"tamname":"LINK SAYFASI"} )
+
+def create(request):
+    return render(request, "todo/create.html", {"pagename":"CRAETA Page"} ) 
