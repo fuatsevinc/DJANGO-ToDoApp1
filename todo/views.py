@@ -6,6 +6,8 @@ from django.http import HttpResponse
 def index(request):
     return render(request, "todo/index.html", {"name":"Fuat SEVINC"} )
 
+def home(request):
+    return render(request, "todo/home.html", {"namex":"HOME PAGE"} )
 
 def about(request):
     return render(request, "todo/about.html", {"surname":"ABOUT SAYFASI"} )
