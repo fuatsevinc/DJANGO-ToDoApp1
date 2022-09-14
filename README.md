@@ -1,16 +1,5 @@
-BU BIR DJANGO TODO UYGULAMASI OLACAK UDEMY MEHMET TEK KURSU =
-<div align="right" >
-  <a href="./README.Django.md">
-    <img src="../images/tr.png" alt="Türkce" width="45px" ></img>
-  </a>
-  <a href="./README.Django.de.md">
-    <img src="../images/de.png" alt="Deutsch" width="30px" ></img>
-  </a>
-  <a href="./README.Django.en.md">
-    <img src="../images/en.png" alt="English" width="30px" ></img>
-  </a>
-</div>
-<br/>
+# BU BIR DJANGO TODO UYGULAMASI OLACAK UDEMY MEHMET TEK KURSU 
+
 
 <div align="center">
   
