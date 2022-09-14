@@ -11,7 +11,34 @@ Home Page
         <hr class="my-4">
         <center> <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">Create ToDo</a></center>
     </div>
+   
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">FINISHED</th>
+            <th scope="col">TODO</th>
+            <th scope="col">CONTENT</th>
+            <th scope="col">TIME</th>
+            <th scope="col">UPDATE</th>
+            <th scope="col">DELETE</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for todo in todo_list %}
+          <tr>
+            <th scope="row"> {{ todo.finished }}</th>
+            <td> {{ todo.title }} </td>
+            <td> {{ todo.content }}</td>
+            <td> {{ todo.date }}</td>
+            <td>UPDATE</td>
+            <td>DELETE</td>
+          </tr>
+         
+          {% endfor %}
+        </tbody>
+      </table>
 
-    {{ todo_list }}
+    
+
 </div>
 {% endblock content %}

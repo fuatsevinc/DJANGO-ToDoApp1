@@ -4,6 +4,33 @@ Create Page
 
 {% endblock title %}
 {% block content %}
+<div class="container">
 
-<h2> {{ pagename }} </h2>
+    <figure class="text-center">
+        <blockquote class="blockquote">
+          <p>CREATE TODO</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          Lütfen yapacaginiz isleri buraya<cite title="Source Title">Giriniz</cite>
+        </figcaption>
+      </figure>
+
+<form>
+    <div class="mb-3">
+      <label class="form-label">TODO TITLE </label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">CONTENT</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">IS FINISHED</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
 {% endblock content %}
