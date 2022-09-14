@@ -11,6 +11,7 @@ Home Page
         <hr class="my-4">
         <center> <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">Create ToDo</a></center>
     </div>
-    <h2> {{ name }} </h2>
+
+    {{ todo_list }}
 </div>
 {% endblock content %}
