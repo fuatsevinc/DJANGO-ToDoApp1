@@ -6,29 +6,35 @@ Create Page
 {% block content %}
 <div class="container">
 
-    <figure class="text-center">
-        <blockquote class="blockquote">
-          <p>CREATE TODO</p>
-        </blockquote>
-        <figcaption class="blockquote-footer">
-          Lütfen yapacaginiz isleri buraya<cite title="Source Title">Giriniz</cite>
-        </figcaption>
-      </figure>
+  <div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4"> <center>Todo App</center> </h1>
+        <p class="lead"> <center> Lütfen Buraya olusturmak istediginiz ToDo yu  giriniz</center> </p>
+        <hr class="my-4">
+    </div>
 
-<form>
+<form method="POST">
+
+    {% csrf_token %}
+
     <div class="mb-3">
       <label class="form-label">TODO TITLE </label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="text" class="form-control" name="title">
     </div>
+
     <div class="mb-3">
       <label  class="form-label">CONTENT</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <input type="text" class="form-control" name="content" >
     </div>
+
     <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">IS FINISHED</label>
+      <input type="checkbox" class="form-check-input" name="finished">
+      <label class="form-check-label" >IS FINISHED?</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+
+
   </form>
 </div>
 

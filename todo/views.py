@@ -28,5 +28,13 @@ def link(request):
     return render(request, "todo/link.html")
 
 def create(request):
-    return render(request, "todo/create.html")
-
+    if request.method == "POST":
+        form = ListForm(request.POST or None)
+        if form.is_valid:
+            form.save()
+            todo_list = Todos.objects.all()
+            return render(request, "todo/create.html", {'todo_list':todo_list})
+    else:
+        todo_list = Todos.objects.all()
+        return render(request, "todo/crate.html", {'todo_list':todo_list})
+        
