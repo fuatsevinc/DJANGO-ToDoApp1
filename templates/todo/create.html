@@ -3,6 +3,9 @@
 Create Page 
 
 {% endblock title %}
+
+
+
 {% block content %}
 <div class="container">
 
@@ -14,9 +17,8 @@ Create Page
     </div>
 
 <form method="POST">
-
     {% csrf_token %}
-
+ 
     <div class="mb-3">
       <label class="form-label">TODO TITLE </label>
       <input type="text" class="form-control" name="title">
