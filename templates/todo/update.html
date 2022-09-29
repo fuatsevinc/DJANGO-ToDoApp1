@@ -1,0 +1,38 @@
+{% extends "todo/base.html" %}
+{% block title %}
+Create Page 
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="container">
+
+  <div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4"> <center>Todo App</center> </h1>
+        <p class="lead"> <center> Lütfen Buraya olusturmak istediginiz ToDo yu  giriniz</center> </p>
+        <hr class="my-4">
+    </div>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label class="form-label">TODO TITLE </label>
+      <input type="text" class="form-control" name="title">
+    </div>
+
+    <div class="mb-3">
+      <label  class="form-label">CONTENT</label>
+      <input type="text" class="form-control" name="content" >
+    </div>
+
+    <button type="submit" class="btn btn-success">UPDATE</button>
+
+
+  </form>
+</div>
+
+
+{% endblock content %}

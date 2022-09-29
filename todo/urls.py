@@ -10,5 +10,5 @@ urlpatterns = [
     path('delete/<Todos_id>', views.delete, name="delete"),
     path('yesfinished/<Todos_id>', views.yesfinished, name="yesfinished"),
     path('nofinished/<Todos_id>', views.nofinished, name="nofinished"),
-
+    path('update/<Todos_id>', views.update, name="update"),
     ]

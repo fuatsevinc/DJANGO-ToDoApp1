@@ -54,3 +54,15 @@ def nofinished(request, Todos_id):
     todo.finished= True
     todo.save()
     return redirect("index")
+
+def update(request, Todos_id):
+    if request.method=="POST":
+        todo_list = Todos.objects.get(pk=Todos_id)
+        form = ListForm(request.POST or None, instance=todo_list)
+        if form.is_valid:
+            form.save()
+            return redirect("index")
+    else:
+        todo_list = Todos.objects.all()
+        return render(request, "todo/update.html", {'todo_list':todo_list})
+        
