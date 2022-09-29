@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from todo.forms import ListForm
 from .models import Todos
-from django.http import HttpResponse
+
 
 # Create your views here.
 
 def index(request):
-    if request.method == "POST":
+    if request.method=="POST":
         form = ListForm(request.POST or None)
         if form.is_valid:
             form.save()
@@ -26,7 +26,7 @@ def link(request):
     return render(request, "todo/link.html")
 
 def create(request):
-    if request.method == "POST":
+    if request.method=="POST":
         form = ListForm(request.POST or None)
         if form.is_valid:
             form.save()
@@ -34,5 +34,5 @@ def create(request):
             return render(request, "todo/create.html", {'todo_list':todo_list})
     else:
         todo_list = Todos.objects.all()
-        return render(request, "todo/crate.html", {'todo_list':todo_list})
+        return render(request, "todo/create.html", {'todo_list':todo_list})
         
