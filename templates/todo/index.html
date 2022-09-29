@@ -24,16 +24,30 @@ Home Page
         </tr>
         </thead>
         <tbody>
+
+
             {% for todo in todo_list %}
+            {% if todo.finished %} 
+           <tr>
+            <td><a class="btn btn-success" href="{% url 'yesfinished' todo.id %}" role="button">YES</a> </td>
+            <td>  <del>{{ todo.title }} </del></td>
+            <td> {{ todo.content }}</td>
+            <td> {{ todo.date }}</td>
+            <td><a class="btn btn-danger" href="{% url 'delete' todo.id %}" role="button">DELETE</a></td>
+            <td><a class="btn btn-success" href="#" role="button">UPDATE</a></td>
+          </tr>
+          {% else %}
           <tr>
-            <th scope="row"> {{ todo.finished }}</th>
+            <td><a class="btn btn-danger" href="{% url 'nofinished' todo.id %}" role="button">NO</a></td>
             <td> {{ todo.title }} </td>
             <td> {{ todo.content }}</td>
             <td> {{ todo.date }}</td>
-            <td>UPDATE</td>
-            <td>DELETE</td>
+            <td><a class="btn btn-danger" href="{% url 'delete' todo.id %}" role="button">DELETE</a></td>
+            <td><a class="btn btn-success" href="#" role="button">UPDATE</a></td>
           </tr>
-         
+
+
+          {% endif %}
           {% endfor %}
         </tbody>
       </table>

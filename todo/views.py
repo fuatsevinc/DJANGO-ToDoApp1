@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from todo.forms import ListForm
 from .models import Todos
 
@@ -35,4 +35,22 @@ def create(request):
     else:
         todo_list = Todos.objects.all()
         return render(request, "todo/create.html", {'todo_list':todo_list})
-        
+
+def delete(request, Todos_id):
+    todo = Todos.objects.get(pk=Todos_id)
+    todo.delete()
+    return redirect("index")
+  
+
+
+def yesfinished(request, Todos_id):
+    todo = Todos.objects.get(pk=Todos_id)
+    todo.finished= False
+    todo.save()
+    return redirect("index")
+
+def nofinished(request, Todos_id):
+    todo = Todos.objects.get(pk=Todos_id)
+    todo.finished= True
+    todo.save()
+    return redirect("index")
