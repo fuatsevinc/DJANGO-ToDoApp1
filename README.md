@@ -1,9 +1,6 @@
-# BU BIR DJANGO TODO UYGULAMASI OLACAK UDEMY MEHMET TEK KURSU 
-
-
 <div align="center">
   
-  <span>This is a DJANGO README template repository</span>
+  <span>This is a DJANGO TODO App</span>
 </div>
 <!-- Please update value in the {}  -->
 # Djnago Basic Setup Project
